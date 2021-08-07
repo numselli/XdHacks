@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Dinos</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="description" content="" />
+
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+		</style>
+
+	
+	</head>
+
+	<body>
+		<canvas id="game" style="width: 640; height: 400;"></canvas>
+	
+	
+	
+		<script>
+			const convase = document.getElementById("game");
+			const ctx = convase.getContext('2d');
+			
+			let score;
+			let scoreText;
+			let highScore;
+			let highScoreText;
+			let player;
+			let gravity;
+			let gameSpeed;
+			let keys = {};
+			let obsticals = [];
+
+			class Player{
+				constructor (x, y, w, h, c){
+					this.x = x;
+					this.y = y;
+					this.w = w;
+					this.h = h;
+					this.c = c;
+					this.dy = 0;
+					this.jumpForce = 15;
+					this.grounded = false;
+					this.jumptimer = 0;
+				}
+
+				Draw (){
+					ctx.beginPath();
+					ctx.fillStyle = this.c;
+					ctx.fillRect(this.x, this.y, this.w, this.h);
+					ctx.closePath();
+				}
+
+				Animate(){
+					//jump
+					if (keys['Space'] || keys["KeysW"]){
+						this.jump();
+					} else {
+						this.jumptimer=0
+					}
+
+					if(keys["ShiftLeft"] || keys['KeysS']){
+						this.h= this.origianlHight / 2
+					} else {
+						this.h = this.origianlHight
+					}
+
+					this.y = this.dy;
+					if (this.y +this.h < canvase.hight){
+						this.dy += gravity; 
+						this.grounded =false
+					}else{
+						this.dy = 0;
+						this.grounded = true;
+						this.y = canvase.hight - this.h
+					}
+					this.Draw();
+
+				}
+
+				Jump (){
+					if (this.grounded && this.jumptimer == 0){
+						this.jumptimer=1;
+						this.dy = - this.jumpForce;
+						
+					}else if(this.jumptimer > 0 && jumptimer < 15){
+						jumptimer++;
+						// this.dy = 
+					}
+				}
+			}
+
+
+			class Obsticals {
+				constructor (x, y, w, h, c){
+					this.x = x;
+					this.y = y;
+					this.w = w;
+					this.h = h;
+					this.c = c;
+					this.dx= -gameSpeed;
+				}
+
+				update(){
+					this.x = this.dx;
+					this.Draw();
+					this.dx = - gameSpeed
+					// player.Animate()
+				}
+
+				Draw(){
+					ctx.beginPath()
+					ctx.fillStyle = this.c;
+					ctx.fillRect(this.x, this.y, this, w, this.h)
+					ctx.closePath()
+				}
+
+				
+			}
+
+			document.addEventListener('keydown', event=>{
+				keys[event.code] = true;
+			})
+			document.addEventListener('keyup', event=>{
+				keys[event.code] = false;
+			})
+
+
+
+			function spawnobs() {
+				let size = 10 // make random
+				let type = 10 // make random
+				let obsticals = new obsticals(canvase.with+size, canvase.hight-sise, sise, sise, "#00000")
+				
+				if (type == 10){
+					obsticals.y -= player.origianlHight - 10;
+
+				}
+				obsticals.push(obsticals);
+
+			}
+
+
+
+			let initspawntimer = 200;
+			let spawntimer = initspawntimer;
+
+
+			function Update() {
+				if(spawntimer <= 0 ){
+					spawnobs()
+					spawntimer= initspawntimer - gameSpeed *8;
+					if(spawntimer < 60) {
+						spawntimer = 60
+					}
+				}
+			}
+
+
+
+			for (let i = 0; i <obsticals.length; i++){
+				let o =obsticals();
+				if (o.x +o.w <0 ){
+					obsticals.splice(i, 1)
+
+				}
+
+				if(player.x < ox +o .w 
+				&& player.x + player.w > o.x &&
+				player.y < o.y +o.h && 
+				player.y + player.h > o.y 
+				
+				){
+					obsticals = [];
+					player.Animate()
+
+					score =0 ;
+					spawntimer = initspawntimer;
+					gameSpeed = 3
+				}
+			}
+
+
+			function start() {
+				convase.with = window.innerHeight;
+				convase.hight = window.innerHeight;
+				ctx.font = "20px sans-serif";
+				gameSpeed = 3;
+				gravity = 1;
+				score = 0
+				highScore = 0;
+
+			}
+
+
+			player = new Player(25, 0, 50, 50, "#FF5858")
+
+
+			requestAnimationFrame(Update);
+			gameSpeed +=0.003;
+			start()
+		</script>
+
+	</body>
+
+</html>
