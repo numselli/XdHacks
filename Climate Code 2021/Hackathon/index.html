@@ -1,159 +1,183 @@
-<!DOCTYPE HTML>
-<html lang="en">
-	<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Last Chance</title>
-		<link href="assets/css/fontawesome-all.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
 
-        <style>
-            /* documnt */
-            * {
-                font-family: 'Nunito';
-            }
-            html, body{
-                background-color: #181818;
-                color: #ffffff;
-                overflow-x: hidden; 
-                margin:0;
-            }
-            html::-webkit-scrollbar {
-                display: none;
-            }
-            html{
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-            a:link, a:visited, a:hover {
-                color:white;
-                background-color: transparent;
-                text-decoration: none;
-            }
+    <!-- font Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://fonts.googleapis.com/css?family=Nunito'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 
-            /* nav */    
-            #nav {
-                overflow: hidden;
-                background-color: #000000;
-            }
-            #nav a{
-                float: right;
-                display: block;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-            }
-            #nav a:hover {
-                background-color: #111;
-                color:#ffffff;
-            }
-            #nav a.active {
-                color: #ffffff;
-            }
-            #nav .icon {
-                display: none;
-            }
-            @media screen and (max-width: 600px) {
-                #nav a:not(:first-child) {
-                    display: none;
-                    text-align: center !important;
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="assets/css/styles.css" rel="stylesheet" type="text/css" />
 
-                }
-                #nav a.icon {
-                    display: block;
-                }
-            
-            }
-            @media screen and (max-width: 600px) {
-                #nav.responsive {
-                    position: relative;
-                }
-                #nav.responsive .icon {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                }
-                #nav.responsive a {
-                    float: none;
-                    display: block;
-                    text-align: left;
-                }
-            }
+    <!-- favicon -->
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon" />
 
-            section, article, section > :last-child, section:last-child, article > :last-child, article:last-child {
-                margin-bottom: 3em;
-                margin-top: 3em;
-            }
-        </style>
-	</head>
+    <!-- title -->
+    <title>LastChance</title>
+  </head>
 
-	<body>  
-        <script src="assets/js/script.js"></script>
-        <!-- Nav -->
-        <div id="nav">
-            <img style="padding: 14px 16px;" width="25px" height="25px" alt="Nulasimelli team logo"src="assets/img/logo.png"></img>
-            <a></a><strong>Last Chance</strong></a>
+  <body>
+    <!-- header -->
+    <div class="header">
+      <div class="inner-header">
+        <div class="logo-container">
+          <a href="/"><img src="assets/img/logo.png" alt="Logo" width="75px"></img></a>
+                  <h1>Last<span>Chance</span></h1>
+              </div>
 
-            <a href="#" onclick="togleNav()">Home</a>
-            <a href="#game" onclick="togleNav()">Game</a>
-            <a href="#about" onclick="togleNav()">About</a>
-        
-            <a class="icon" onclick="togleNav()"><i class="fa fa-bars"></i></a>
+              <ul class="navigation">
+                  <a href="#games"><li>Games</li></a>
+                  <a href="https://github.com/numselli/XdHacks/tree/main/Climate%20Code%202021" rel="nofollow noopener" target="_blank"><li>GitHub</li></a>
+              </ul>
+          </div>
+    </div>
+
+    <div id="main" style="height: 100%; width: 100%; margin: 0 auto;">
+      <!-- hero section -->
+      <article id="home" class="panel">
+        <div class="main">
+          <div class="main__container">
+            <div class="main__content">
+              <h1>The future depends on what we do now. This is our last chance.</h1>
+              <p>Play a mini escape room game to learn more about climate change and it’s detrimental consequences.</p>
+             <a href="#games"><div class="main__btn">Start game</div></a>
+            </div>
+            <div class="main__img--container">
+              <img src="assets/img/undraw_nature_m5ll.svg" alt="nature" id="main__img" width="410px">
+            </div>
+        </div>
+        </div>
+      </article>
+
+      <!-- game page -->
+      <article id="games" class="panel" style="width: 100%; margin: 0 auto;">
+        <div id="introText">
+            <p>Welcome to the online mini escape room, LastChance!</p>
+            <br>
+            <p>LastChance is a quick and fun 4 question online escape room!</p>
+            <br>
+            <p>You are put in a situation where only you can save Canada from climate change!</p>
+            <br>
+            <p>The objective of the game is to gather 4 or more points by successfully answering questions (worth 1 point each) related to climate change.</p>
+            <br>
+            <p>Failing to do so will unfortunately cause all canadians to suffer the devastating consequences of climate change!</p>
+            <br>
+            <p>Have fun and don't let your fellow Canadians down!</p>
+            <br>
+            <img src="https://visme.co/blog/wp-content/uploads/climate-change-facts-header-1200.gif" alt="polar-bear-and-climate-change" width="400px">
+            <button class="main__btn" onclick="startGame()">Ready?</button>
         </div>
 
-        <div id="main" style="height: 100%; width: 100%; margin: 0 auto;">
+        <div id="levels">
+          <div id="L1" class="">
+            <p>One day you wake up feeling quite hot and sweaty.</p>
+            <br>
+            <p>As you get out of bed, drentched in sweat, you decide to open the windows to get a little breeze in.</p>
+            <br>
+            <p>However, as soon as you open your windows, you feel a huge heat wave hit you right in the face</p>
+            <br>
+            <p>You question yourself about the strange increase in heat. What are heat waves caused by?</p>
+            <br>
+            <img src="https://i.gifer.com/6yf.gif" alt="heat-wave-gif" width="400px></img>
+            <br></br>
+            <div class="hint1">
+                </br>
+                <p class="inactive" id="l1hint"">Hint: Whatever you choose to call it, the most important thing is that we have to act to stop it.</p>
+                <input type="text" id="L1submit" answer="climate change, global warming, global climate crisis" ></input>
+                <button onclick="checkAnswer(this)">Submit</button>
+          </div>
 
-            <!-- home -->
-            <article id="home" class="panel intro inactive" >
-                <div>
-                    <span></span>
-                    <img></img>
-                </div>
-    
-                <div>
-                    <span></span>
-                    <button></button>
-                </div>
-            </article>
+          <div id="L2" class="">
+            <p>Heat waves are detrimental to the environment, and most importantly, to our own well being!</p>
+            <br>
+            <p>Heat waves are notorious for taking our own lives as they may cause health complications like headaches, rashes, dehydration, or even blood clots!</p>
+            <br>
+            <p>Heat waves are also known for their damaging repercussions on surrounding ecosystems!</p>
+            <br>
+            <p>Often times, when the temperature of the water drastically elevates due to the presence of heat waves, the quality of water also takes a toll for the worse, all while affecting marine life (increase in algue, a.k.a the process of eutrophication, which creates a high risk of fishes dying :o)</p>  
+            <br>
+            <p>Heat waves ultimately caused by global warming can be stopped as a collective.</p>
+            <br>
+            <p>What can we do to help people who are unsure of what to do?</p>
+            <br>
+            <img src="https://media3.giphy.com/media/N2pyn50o35Nm3We6BE/200.gif" alt="think" width="200px">
+            <br>
+            <p class="inactive" id="l2hint"">Schools are one place to do this.</p>
+            <input type="text" id="L2submit" answer="educate" ></input>
+            <button onclick="checkAnswer(this)">Submit</button>
+          </div>
 
+          <div id="L3" class="">
+            <span>Like most people, it’s Canada so you don’t have an AC. So you sit and cry for a moment but then decide to call your friend. They live in America and are currently having a drought. Like heat waves, droughts are also caused by climate change. From the photo, what kind of thing can droughts affect?</span>
+            <img src="assets/img/q3visual.png" alt="question 3 visual"></img>
+            <span class="inactive" id="l3hint"">Look at the sheep in the image.</span>
+            <input type="text" id="L3submit" answer="agriculture" ></input>
+            <button onclick="checkAnswer(this)">Submit</button>
+          </div>
 
+          <div id="L4" class="">
+            <span>After many days later, the heat wave had finally cooled down, for now. You decide to take a walk outside. You see someone with a drink, and they are using a straw. From your days of studying, you know that straws are bad for the environment, and conclude that the person with MOST fault is:</span>
+            <ol type="A">
+              <li>The person with the drink</li>
+              <li>The company that made the straw</li>
+              <li>Whoever sold them the drink</li>
+            </ol>
+            <span class="inactive" id="l4hint"">Yes everyone in this case has a wrong, but one of them is the most.</span>
+            <input type="text" id="L4submit" answer="b, he company that made the straw" ></input>
+            <button onclick="checkAnswer(this)">Submit</button>
+          </div>
 
-            <article id="game" class="panel inactive" style="width: 100%; margin: 0 auto;">
-                <span>game</span>
-            </article>
+          <div id="L5" class="">
+            <span>You begin your journey by educating yourself. Which out of these 3 are sustainable?</span>
+            <ol type="A">
+              <li>Fossil fuels</li>
+              <li>Plastics</li>
+              <li>Wind</li>
+            </ol>
+            <a class="inactive" id="l5hint" href="https://clarifygreen.com/sustainable-or-unsustainable"  rel="nofollow noopener" target="_blank">https://clarifygreen.com/sustainable-or-unsustainable</a>
+            <img src="assets/img/q5visual.png" alt="question 3 visual"></img>
+            <input type="text" id="L5submit" answer="c, wind" ></input>
+            <button onclick="checkAnswer(this)">Submit</button>
+          </div>
 
-            <article id="about" class="panel inactive" style="width: 100%; margin: 0 auto;">
-                <span>about</span>
-            </article>
+          <div id="L6" class="">
+            <span>Is wood sustainable? (In this case, we’re talking about the wood industry + clear cutting.)</span>
+            <ol type="A">
+              <li>Yes</li>
+              <li>No</li>
+              <li>Sometimes</li>
+            </ol>
+            <span class="inactive" id="l6hint">Sustainable is not the same as renewable.</SPAN>
+            <input type="text" id="L6submit" answer="b, no" ></input>
+            <button onclick="checkAnswer(this)">Submit</button>
         </div>
 
-        <script>
-            // const breakpoints=function(){"use strict";function e(e){t.init(e)}let t={list:null,media:{},events:[],init:function(e){t.list=e,window.addEventListener("resize",t.poll),window.addEventListener("orientationchange",t.poll),window.addEventListener("load",t.poll),window.addEventListener("fullscreenchange",t.poll)},active:function(e){let n,a,s,i,r,d,c;if(!(e in t.media)){if(">="==e.substr(0,2)?(a="gte",n=e.substr(2)):"<="==e.substr(0,2)?(a="lte",n=e.substr(2)):">"==e.substr(0,1)?(a="gt",n=e.substr(1)):"<"==e.substr(0,1)?(a="lt",n=e.substr(1)):"!"==e.substr(0,1)?(a="not",n=e.substr(1)):(a="eq",n=e),n&&n in t.list)if(i=t.list[n],Array.isArray(i)){if(r=parseInt(i[0]),d=parseInt(i[1]),isNaN(r)){if(isNaN(d))return;c=i[1].substr(String(d).length)}else c=i[0].substr(String(r).length);if(isNaN(r))switch(a){case"gte":s="screen";break;case"lte":s="screen and (max-width: "+d+c+")";break;case"gt":s="screen and (min-width: "+(d+1)+c+")";break;case"lt":s="screen and (max-width: -1px)";break;case"not":s="screen and (min-width: "+(d+1)+c+")";break;default:s="screen and (max-width: "+d+c+")"}else if(isNaN(d))switch(a){case"gte":s="screen and (min-width: "+r+c+")";break;case"lte":s="screen";break;case"gt":s="screen and (max-width: -1px)";break;case"lt":s="screen and (max-width: "+(r-1)+c+")";break;case"not":s="screen and (max-width: "+(r-1)+c+")";break;default:s="screen and (min-width: "+r+c+")"}else switch(a){case"gte":s="screen and (min-width: "+r+c+")";break;case"lte":s="screen and (max-width: "+d+c+")";break;case"gt":s="screen and (min-width: "+(d+1)+c+")";break;case"lt":s="screen and (max-width: "+(r-1)+c+")";break;case"not":s="screen and (max-width: "+(r-1)+c+"), screen and (min-width: "+(d+1)+c+")";break;default:s="screen and (min-width: "+r+c+") and (max-width: "+d+c+")"}}else s="("==i.charAt(0)?"screen and "+i:i;t.media[e]=!!s&&s}return t.media[e]!==!1&&window.matchMedia(t.media[e]).matches},on:function(e,n){t.events.push({query:e,handler:n,state:!1}),t.active(e)&&n()},poll:function(){let e,n;for(e=0;e<t.events.length;e++)n=t.events[e],t.active(n.query)?n.state||(n.state=!0,n.handler()):n.state&&(n.state=!1)}};return e._=t,e.on=function(e,n){t.on(e,n)},e.active=function(e){return t.active(e)},e}();!function(e,t){"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?module.exports=t():e.breakpoints=t()}(this,function(){return breakpoints});
-            // // event listeners
-            // document.addEventListener("DOMContentLoaded", pageLoad)
-            // window.addEventListener("hashchange", pageLoad, false);
-            // pageLoad()
+        <div id="L7" class="">
+          <h3>RESULTS<h3>
 
+          <span>correct: </span>
+          <span id="correctDisplay">NaN</span>
+          <br>
+          <span>wrong: </span>
+          <span id="wrongDisplay">NaN</span>
+          <br>
+          <span>percent: </span>
+          <span id="percentDisplay">NaN</span>
+          <br>
+          <span id="passDisplay">Passed | failed</span>
+          <br><br><br>
+          
+          <span>Thank you for playing!!</span>
+          <br>
+          <span>This entire site was made in less than 12 hours by Nuwanda, sim, numselli, and laahini as part of the Climate Code 2021 hackathon put on by <a href="https://mini.xdhacks.com/" rel="nofollow noopener" target="_blank">XdHacks</a></span>
+        </div>
+      </article>
+    </div>
 
-            // async function pageLoad(){
-            //     breakpoints({xlarge: ['1281px', '1680px'],large: ['981px', '1280px'],medium: ['737px', '980px'],small: ['361px', '736px'],xsmall: [null, '360px']});
-
-            //     const main = document.getElementById("main")
-            //     const panels = main.getElementsByClassName('panel')
-            //     const panel = document.querySelector(`[id="${window.location.hash.replace("#","")}"]`) ?? panels[0];
-
-            //     for(const currentPannel of panels) {
-            //         if (panel.id === currentPannel.id) currentPannel.classList.remove("inactive")
-            //         else currentPannel.classList.add("inactive")
-            //     }
-            //     document.body.scrollTop = 0;
-            //     document.documentElement.scrollTop = 0; 
-            // }
-
-            // function togleNav(hide) {
-            //     const x = document.getElementById("nav");
-            //     x.className = hide ? "topnav" : x.className === "topnav" ? "responsive" : "topnav"
-            // }
-        </script>
-	</body>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

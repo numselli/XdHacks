@@ -1,0 +1,191 @@
+/* document */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Nunito', sans-serif; 
+}
+html{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+body {
+  background-color: #ffffff;
+  color: #000000;
+  overflow-x: hidden; 
+  margin:0;
+}
+
+/* header */
+.header {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+.inner-header {
+  width: 90%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.logo-container {
+  height: 100%;
+  display: table; 
+  float: left;
+}
+.logo-container h1 {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 25px;
+}
+.logo-container img {
+  height: 90%;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 25px;
+}
+.navigation {
+  float: right;
+  height: 100%;
+}
+.navigation a{
+  height: 100%;
+  display: table;
+  float: left;
+  padding: 0px 20px;
+  text-decoration: none;
+}
+.navigation li {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  color: black;
+  font-size: 20px;
+}
+
+
+/* landing page */
+.main__container {
+  display: grid;
+  grid-template-columns: 30fr 24fr;
+  align-items: center;
+  justify-self: center;
+  margin: 0 auto;
+  background-color: white;
+  z-index: 1;
+  width: 70%;
+  padding: 0 50px;
+}
+
+.main__content h1 {
+  font-size: 4rem;
+  background-color: black;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  padding: 2rem;
+}
+
+.main__content p {
+  margin-top: 1rem;
+  padding: 2rem;
+  font-size: 20px;
+}
+
+/* panel */
+.inactive{
+  display: none;
+}
+.active{
+  visibility: visible
+}
+.panel {
+  margin-top: 25px;
+  font-size: 21px;
+  text-align: center;
+
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+        -o-animation: fadein 2s; /* Opera < 12.1 */
+          animation: fadein 2s;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* hint1 */
+.hint1 {
+    position: relative;
+    top: 400px;
+}
+
+/* button */
+.main__btn {
+  font-size: 25px;
+  font-style: italic;
+  background: #C3F1B0;
+  padding: 20px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  margin-top: 2rem;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.35s;
+  outline: none;
+  left: 890px;
+  top: 740px;
+}
+.main__btn a {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+}
+.main__btn:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background:#80e5ff;
+  transition: all 0.35s;
+  border-radius: 4px;
+}
+.main__btn:hover {
+  color: white;  
+}
+.main__btn:hover:after {
+  width: 100%;
+}
+.main__img--container {
+  text-align: center;
+}
+
+
+
