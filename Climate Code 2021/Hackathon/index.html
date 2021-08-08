@@ -31,7 +31,7 @@
 
               <ul class="navigation">
                   <a href="#games"><li>Games</li></a>
-                  <a href="https://github.com/numselli/XdHacks/tree/main/Climate%20Code%202021" rel="nofollow noopener" target="_blank"><li>GitHub</li></a>
+                  <a href="https://github.com/numselli/XdHacks" rel="nofollow noopener" target="_blank"><li>GitHub</li></a>
               </ul>
           </div>
     </div>
@@ -64,9 +64,11 @@
             <br>
             <p>The objective of the game is to gather 4 or more points by successfully answering questions (worth 1 point each) related to climate change.</p>
             <br>
-            <p>Failing to do so will unfortunately cause all canadians to suffer the devastating consequences of climate change!</p>
+            <p>Failing to do so will unfortunately cause all Canadians to suffer the devastating consequences of climate change!</p>
             <br>
             <p>Have fun and don't let your fellow Canadians down!</p>
+            <br>
+            <p style="color:red;font-size:15px;">NOTE: To get the most accurate answers, type your answers in lowercase without any articles (i.e. "the") for non-multiple choice questions and for multiple choice questions, copy your answer from the list of possible answers or simply type the letter associated with you answer.</p>
             <br>
             <img src="https://visme.co/blog/wp-content/uploads/climate-change-facts-header-1200.gif" alt="polar-bear-and-climate-change" width="400px">
             <button class="main__btn" onclick="startGame()">Ready?</button>
@@ -74,11 +76,13 @@
 
         <div id="levels">
           <div id="L1" class="">
+            <h2>Question 1: </h2>
+            <br>
             <p>One day you wake up feeling quite hot and sweaty.</p>
             <br>
             <p>As you get out of bed, drentched in sweat, you decide to open the windows to get a little breeze in.</p>
             <br>
-            <p>However, as soon as you open your windows, you feel a huge heat wave hit you right in the face</p>
+            <p>However, as soon as you open your windows, you feel a huge heat wave hit you right in the face.</p>
             <br>
             <p>You question yourself about the strange increase in heat. What are heat waves caused by?</p>
             <br>
@@ -87,11 +91,14 @@
             <div class="hint1">
                 </br>
                 <p class="inactive" id="l1hint"">Hint: Whatever you choose to call it, the most important thing is that we have to act to stop it.</p>
-                <input type="text" id="L1submit" answer="climate change, global warming, global climate crisis" ></input>
+                <input type="text" id="L1submit" answer="climate change, Climate change, Global warming, global warming, Climate crisis, climate crisis" ></input>
                 <button onclick="checkAnswer(this)">Submit</button>
+            
           </div>
 
           <div id="L2" class="">
+            <h2>Question 2: </h2>
+            <br>
             <p>Heat waves are detrimental to the environment, and most importantly, to our own well being!</p>
             <br>
             <p>Heat waves are notorious for taking our own lives as they may cause health complications like headaches, rashes, dehydration, or even blood clots!</p>
@@ -106,72 +113,126 @@
             <br>
             <img src="https://media3.giphy.com/media/N2pyn50o35Nm3We6BE/200.gif" alt="think" width="200px">
             <br>
-            <p class="inactive" id="l2hint"">Schools are one place to do this.</p>
-            <input type="text" id="L2submit" answer="educate" ></input>
+            <p class="inactive" id="l2hint"">Hint: Schools are one place to do this.</p>
+            <input type="text" id="L2submit" answer="educate, Educate" ></input>
             <button onclick="checkAnswer(this)">Submit</button>
           </div>
 
           <div id="L3" class="">
-            <span>Like most people, it’s Canada so you don’t have an AC. So you sit and cry for a moment but then decide to call your friend. They live in America and are currently having a drought. Like heat waves, droughts are also caused by climate change. From the photo, what kind of thing can droughts affect?</span>
-            <img src="assets/img/q3visual.png" alt="question 3 visual"></img>
-            <span class="inactive" id="l3hint"">Look at the sheep in the image.</span>
-            <input type="text" id="L3submit" answer="agriculture" ></input>
+            <h2>Question 3: </h2>
+            <br>
+            <p>As the day goes on, it seems as if it gets hotter, and hotter by the hour!</p> 
+            <br>
+            <p>You realize that you haven't even turned on the AC!</p>
+            <br>
+            <p>No wonder it was so hot in your house! However, as you turn your ventilation system, your whole neighborhood goes out!</p>
+            <br>
+            <p>
+            Due to the high temperatures caused by the heat wave, many of your fellow neighbours also decided that it was a good idea to turn on 
+            the AC at the same time which caused an electrical burnout.
+            </p>
+            <br>
+            <p>Suddenly, you get a phone call from your friend from another province.</p>
+            <br>
+            <p>Turns out, she's also facing some trouble: her whole city is having a drought!
+            </p>
+            <br>
+            <p>From the photo, the lack of what can cause droughts?</p>
+            <br>
+            <img src="assets/img/q3visual.png" alt="question 3 visual" width="300px"></img>
+            <br>
+            <p class="inactive" id="l3hint"">Hint: Look at soil and grass.</p>
+            <input type="text" id="L3submit" answer="agriculture, Agriculture" ></input>
             <button onclick="checkAnswer(this)">Submit</button>
           </div>
 
           <div id="L4" class="">
-            <span>After many days later, the heat wave had finally cooled down, for now. You decide to take a walk outside. You see someone with a drink, and they are using a straw. From your days of studying, you know that straws are bad for the environment, and conclude that the person with MOST fault is:</span>
+            <h2>Question 4: </h2>
+            <br>
+            <p>After many days later, the heat wave has finally cooled down.</p>
+            <br>
+            <p>For once, the weather is nice and you decide to take a walk outside to enjoy the fresh air.</p>
+            <br>
+            <p>However, you notice that a whole group of teens drinking their lemonade with plastic straws!</p>
+            <br>
+            <p>It's 2021 and slowly plastic straws and other plastic amenities are being replaced with eco-friendly alternatives.</p>
+            <br>
+            <p>In order to further decrease the use of plastic, who is the most at fault for the circulation of plastic straws?</p>
+            <br>
             <ol type="A">
-              <li>The person with the drink</li>
-              <li>The company that made the straw</li>
-              <li>Whoever sold them the drink</li>
+              <li>a. The group of teens using the straws</li>
+              <li>b. The company that made the straws</li>
+              <li>c. Whoever sold them the drink</li>
             </ol>
-            <span class="inactive" id="l4hint"">Yes everyone in this case has a wrong, but one of them is the most.</span>
-            <input type="text" id="L4submit" answer="b, he company that made the straw" ></input>
+            <br>
+            <img src="https://media.tenor.com/images/8a7b5df90d4d91aa1eeaf3c3277564e1/tenor.gif" alt="straw-gif" width="200px">
+            <br>
+            <span class="inactive" id="l4hint"">Hint: think about who creates the consequences of using straws on a global scale</span>
+            <input type="text" id="L4submit" answer="The company that made the straws, a, the company that made the straws" ></input>
             <button onclick="checkAnswer(this)">Submit</button>
           </div>
 
           <div id="L5" class="">
-            <span>You begin your journey by educating yourself. Which out of these 3 are sustainable?</span>
+            <h2>Question 5: </h2>
+            <br>
+            <p>After you realize  first-hand the consequences of climate change, you begin your journey by educating yourself.</p>
+            <br>
+            <p>Which out of these three is the most sustainable?</p>
+            <br>
             <ol type="A">
-              <li>Fossil fuels</li>
-              <li>Plastics</li>
-              <li>Wind</li>
+              <li>a. Fossil fuels</li>
+              <li>b. Plastics</li>
+              <li>c. Wind</li>
             </ol>
-            <a class="inactive" id="l5hint" href="https://clarifygreen.com/sustainable-or-unsustainable"  rel="nofollow noopener" target="_blank">https://clarifygreen.com/sustainable-or-unsustainable</a>
-            <img src="assets/img/q5visual.png" alt="question 3 visual"></img>
-            <input type="text" id="L5submit" answer="c, wind" ></input>
+            <br>
+            <img src="assets/img/q5visual.png" alt="question 3 visual" width="200px"></img>
+            <br>
+            <a class="inactive" id="l5hint" href="https://clarifygreen.com/sustainable-or-unsustainable"  rel="nofollow noopener" target="_blank">Check this website for your hint</a>
+            <br>
+            <input type="text" id="L5submit" answer="c, Wind, wind," ></input>
             <button onclick="checkAnswer(this)">Submit</button>
           </div>
 
           <div id="L6" class="">
-            <span>Is wood sustainable? (In this case, we’re talking about the wood industry + clear cutting.)</span>
+            <h2>Question 6: </h2>
+            <br>
+            <p>The more you learn, the more you realize that you and everyone else
+            can help save Canada from climate change.</p>
+            <br>
+            <p>Considering Canada produces an incredible amount of wood, where it accounts for around 9% of the world's forest, is wood sustainable? (In this case, we’re talking about the wood industry and lear cutting.)</p>
+            <br>
             <ol type="A">
-              <li>Yes</li>
-              <li>No</li>
-              <li>Sometimes</li>
+              <li>a. Yes</li>
+              <li>b. No</li>
+              <li>c. Sometimes</li>
             </ol>
-            <span class="inactive" id="l6hint">Sustainable is not the same as renewable.</SPAN>
-            <input type="text" id="L6submit" answer="b, no" ></input>
+            <br>
+            <img src="https://cdn.substack.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F0100b309-1e76-4733-a174-14c1be3413b5_500x500.gif" alt="wood-gif" width="200px">
+            <br>
+            <span class="inactive" id="l6hint">Hint: Sustainable is not the same as renewable.</span>
+            <br>
+            <input type="text" id="L6submit" answer="b, no, No" ></input>
             <button onclick="checkAnswer(this)">Submit</button>
         </div>
 
         <div id="L7" class="">
-          <h3>RESULTS<h3>
-
-          <span>correct: </span>
+          <h3>RESULTS:<h3>
+            <br>
+          <p>Correct answers: </p>
           <span id="correctDisplay">NaN</span>
           <br>
-          <span>wrong: </span>
+          <p>wrong: </p>
           <span id="wrongDisplay">NaN</span>
           <br>
-          <span>percent: </span>
+          <p>Score (percentage): </p>
           <span id="percentDisplay">NaN</span>
           <br>
-          <span id="passDisplay">Passed | failed</span>
+          <p id="passDisplay">Passed | failed</p>
           <br><br><br>
           
-          <span>Thank you for playing!!</span>
+          <p><strong>Thank you for playing!!!</strong></p>
+          <br>
+          <img src="https://cdn.dribbble.com/users/2379385/screenshots/5414376/dancing_fleur.gif" alt="flower-dancing" width="250px">
           <br>
           <span>This entire site was made in less than 12 hours by Nuwanda, sim, numselli, and laahini as part of the Climate Code 2021 hackathon put on by <a href="https://mini.xdhacks.com/" rel="nofollow noopener" target="_blank">XdHacks</a></span>
         </div>
